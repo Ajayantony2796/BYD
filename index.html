@@ -14,14 +14,13 @@
       font-family: Arial, sans-serif;
     }
     
-    /* Adaptive container with no extra vertical spacing */
+    /* Adaptive container flush at the top with no extra vertical spacing */
     .car-container {
       width: 100%;
       max-width: 1000px;  /* Maximum width for larger screens */
-      margin: 0 auto;     /* Center container horizontally */
+      margin: 0 auto;     /* Center container horizontally, with no margin on top */
       position: relative;
       text-align: center;
-      /* Remove any extra space above or below */
       padding: 0;
     }
     
@@ -79,7 +78,7 @@
   </style>
 </head>
 <body>
-  <!-- The container is immediately visible with no extra vertical spacing -->
+  <!-- The container is flush with the top of the viewport -->
   <div class="car-container">
     <!-- Car image that fills the container -->
     <img id="car-image" src="quartz-blue.webp" alt="Car Color Preview">
@@ -110,7 +109,7 @@
       // Fade-out effect
       carImage.style.opacity = 0;
       setTimeout(() => {
-        // Change image source and fade back in
+        // Update image source and fade back in
         carImage.src = `${colorName}.webp`;
         carImage.style.opacity = 1;
       }, 200);
