@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Color Changing Car</title>
   <style>
-    /* Remove default margins and hide horizontal overflow */
+    /* Remove default margins and paddings from html and body */
     html, body {
       margin: 0;
       padding: 0;
@@ -14,14 +14,14 @@
       font-family: Arial, sans-serif;
     }
     
-    /* Adaptive container flush at the top with no extra vertical spacing */
+    /* Ensure the container is flush with the top */
     .car-container {
       width: 100%;
       max-width: 1000px;  /* Maximum width for larger screens */
-      margin: 0 auto;     /* Center container horizontally, with no margin on top */
+      margin: 0 auto;     /* Center container horizontally */
       position: relative;
       text-align: center;
-      padding: 0;
+      padding: 0;         /* No extra padding */
     }
     
     /* Responsive car image that scales with the container */
@@ -29,13 +29,13 @@
       width: 100%;
       height: auto;
       transition: opacity 0.2s;
-      display: block;  /* Eliminates any inline spacing issues */
+      display: block;     /* Eliminates any inline spacing issues */
     }
     
     /* Color picker positioned over the image with minimal spacing */
     .color-picker {
       position: absolute;
-      bottom: 10px;  /* Adjust if needed for closer placement */
+      bottom: 10px;       /* Adjust if needed for closer placement */
       left: 50%;
       transform: translateX(-50%);
       margin: 0;
