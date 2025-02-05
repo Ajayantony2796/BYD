@@ -14,13 +14,15 @@
       font-family: Arial, sans-serif;
     }
     
-    /* Adaptive container that fills the viewport width up to a maximum */
+    /* Adaptive container with no extra vertical spacing */
     .car-container {
       width: 100%;
-      max-width: 1000px; /* Maximum width for larger screens */
-      margin: 0 auto;    /* Center container */
+      max-width: 1000px;  /* Maximum width for larger screens */
+      margin: 0 auto;     /* Center container horizontally */
       position: relative;
       text-align: center;
+      /* Remove any extra space above or below */
+      padding: 0;
     }
     
     /* Responsive car image that scales with the container */
@@ -31,12 +33,14 @@
       display: block;  /* Eliminates any inline spacing issues */
     }
     
-    /* Color picker positioned over the image */
+    /* Color picker positioned over the image with minimal spacing */
     .color-picker {
       position: absolute;
-      bottom: 10px;
+      bottom: 10px;  /* Adjust if needed for closer placement */
       left: 50%;
       transform: translateX(-50%);
+      margin: 0;
+      padding: 0;
     }
     
     /* Smaller color buttons for a sleek, non-intrusive look */
@@ -75,12 +79,12 @@
   </style>
 </head>
 <body>
-  <!-- The container adapts to the viewport and prevents scrolling -->
+  <!-- The container is immediately visible with no extra vertical spacing -->
   <div class="car-container">
     <!-- Car image that fills the container -->
     <img id="car-image" src="quartz-blue.webp" alt="Car Color Preview">
     
-    <!-- Color picker buttons -->
+    <!-- Color picker buttons positioned over the image -->
     <div class="color-picker">
       <button class="color-button" style="background: #273651" 
               onclick="changeColor('quartz-blue')" 
@@ -106,7 +110,7 @@
       // Fade-out effect
       carImage.style.opacity = 0;
       setTimeout(() => {
-        // Update image source and fade in
+        // Change image source and fade back in
         carImage.src = `${colorName}.webp`;
         carImage.style.opacity = 1;
       }, 200);
@@ -114,4 +118,3 @@
   </script>
 </body>
 </html>
-
