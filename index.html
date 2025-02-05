@@ -6,22 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Color Changing Car</title>
   <style>
-    /* Remove default margins and paddings from html and body */
-    html, body {
+    /* Universal reset to remove all default margins and paddings */
+    * {
       margin: 0;
       padding: 0;
-      overflow-x: hidden; /* Prevent horizontal scrolling */
+      box-sizing: border-box;
+    }
+
+    /* Remove any potential whitespace between inline elements */
+    html, body {
+      overflow-x: hidden;
       font-family: Arial, sans-serif;
     }
     
-    /* Ensure the container is flush with the top */
+    /* Container flush with the very top of the viewport */
     .car-container {
       width: 100%;
-      max-width: 1000px;  /* Maximum width for larger screens */
-      margin: 0 auto;     /* Center container horizontally */
+      max-width: 1000px; /* Maximum width for larger screens */
+      margin: 0 auto;    /* Center container horizontally */
       position: relative;
       text-align: center;
-      padding: 0;         /* No extra padding */
     }
     
     /* Responsive car image that scales with the container */
@@ -29,7 +33,7 @@
       width: 100%;
       height: auto;
       transition: opacity 0.2s;
-      display: block;     /* Eliminates any inline spacing issues */
+      display: block;  /* Prevents any extra inline spacing */
     }
     
     /* Color picker positioned over the image with minimal spacing */
@@ -38,8 +42,6 @@
       bottom: 10px;       /* Adjust if needed for closer placement */
       left: 50%;
       transform: translateX(-50%);
-      margin: 0;
-      padding: 0;
     }
     
     /* Smaller color buttons for a sleek, non-intrusive look */
@@ -50,7 +52,7 @@
       border-radius: 50%;
       margin: 5px;
       cursor: pointer;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
       transition: transform 0.2s;
     }
     
