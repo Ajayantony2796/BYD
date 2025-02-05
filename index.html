@@ -13,16 +13,18 @@
       font-family: Arial, sans-serif;
     }
     
-    /* Updated container: increased width for a larger car image */
+    /* Container placed at the top so that it is immediately visible */
     .car-container {
-      width: 1000px;       /* Increased width */
+      width: 1000px;       /* Increased width for a larger image */
       max-width: 100%;     /* Responsive on smaller screens */
-      margin: 50px auto;
+      margin: 0 auto;      /* Centered with no extra top margin */
       position: relative;
       text-align: center;
+      /* Optional: add padding-top if you need extra space at the top */
+      /* padding-top: 20px; */
     }
     
-    /* The car image fills the container width */
+    /* The car image fills the container's width */
     #car-image {
       width: 100%;
       height: auto;
@@ -72,7 +74,7 @@
     /* Mobile view adjustments */
     @media (max-width: 480px) {
       .car-container {
-        margin: 10px;
+        margin: 10px auto;
       }
       .color-button {
         width: 20px;
@@ -83,6 +85,7 @@
   </style>
 </head>
 <body>
+  <!-- The container is now placed at the top of the page so that the feature is immediately visible -->
   <div class="car-container">
     <!-- Default car image -->
     <img id="car-image" src="quartz-blue.webp" alt="Car Color Preview">
@@ -122,3 +125,4 @@
   </script>
 </body>
 </html>
+
