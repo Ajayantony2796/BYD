@@ -6,32 +6,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Color Changing Car</title>
   <style>
-    /* Base styling for body */
-    body {
+    /* Remove default margins and hide horizontal overflow */
+    html, body {
       margin: 0;
       padding: 0;
+      overflow-x: hidden; /* Prevent horizontal scrolling */
       font-family: Arial, sans-serif;
     }
     
-    /* Container placed at the top so that it is immediately visible */
+    /* Adaptive container that fills the viewport width up to a maximum */
     .car-container {
-      width: 1000px;       /* Increased width for a larger image */
-      max-width: 100%;     /* Responsive on smaller screens */
-      margin: 0 auto;      /* Centered with no extra top margin */
+      width: 100%;
+      max-width: 1000px; /* Maximum width for larger screens */
+      margin: 0 auto;    /* Center container */
       position: relative;
       text-align: center;
-      /* Optional: add padding-top if you need extra space at the top */
-      /* padding-top: 20px; */
     }
     
-    /* The car image fills the container's width */
+    /* Responsive car image that scales with the container */
     #car-image {
       width: 100%;
       height: auto;
       transition: opacity 0.2s;
+      display: block;  /* Eliminates any inline spacing issues */
     }
     
-    /* Position the color picker near the bottom-center of the container */
+    /* Color picker positioned over the image */
     .color-picker {
       position: absolute;
       bottom: 10px;
@@ -39,7 +39,7 @@
       transform: translateX(-50%);
     }
     
-    /* Smaller color buttons */
+    /* Smaller color buttons for a sleek, non-intrusive look */
     .color-button {
       width: 30px;
       height: 30px;
@@ -57,13 +57,6 @@
     
     /* Tablet view adjustments */
     @media (max-width: 768px) {
-      .car-container {
-        width: 90%;
-        margin: 20px auto;
-      }
-      #car-image {
-        width: 100%;
-      }
       .color-button {
         width: 25px;
         height: 25px;
@@ -73,9 +66,6 @@
     
     /* Mobile view adjustments */
     @media (max-width: 480px) {
-      .car-container {
-        margin: 10px auto;
-      }
       .color-button {
         width: 20px;
         height: 20px;
@@ -85,9 +75,9 @@
   </style>
 </head>
 <body>
-  <!-- The container is now placed at the top of the page so that the feature is immediately visible -->
+  <!-- The container adapts to the viewport and prevents scrolling -->
   <div class="car-container">
-    <!-- Default car image -->
+    <!-- Car image that fills the container -->
     <img id="car-image" src="quartz-blue.webp" alt="Car Color Preview">
     
     <!-- Color picker buttons -->
@@ -116,13 +106,11 @@
       // Fade-out effect
       carImage.style.opacity = 0;
       setTimeout(() => {
-        // Change image source
+        // Update image source and fade in
         carImage.src = `${colorName}.webp`;
-        // Fade the image back in
         carImage.style.opacity = 1;
       }, 200);
     }
   </script>
 </body>
 </html>
-
